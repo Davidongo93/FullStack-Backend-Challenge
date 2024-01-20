@@ -26,5 +26,22 @@
   "bugs": {
     "url": "https://github.com/Davidongo93/FullStack-Backend-Challenge/issues"
   },
-  "homepage": "https://github.com/Davidongo93/FullStack-Backend-Challenge#readme"
+  "homepage": "https://github.com/Davidongo93/FullStack-Backend-Challenge#readme",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/body-parser": "^1.19.5",
+    "@types/cookie-parser": "^1.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.11.5",
+    "axios": "^1.6.5",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.2",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.3"
+  }
 }
