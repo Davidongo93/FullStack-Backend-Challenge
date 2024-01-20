@@ -1,0 +1,30 @@
+{
+  "name": "fullstack-backend-challenge",
+  "version": "1.0.0",
+  "description": "Skills assessment challenge for BeMaster",
+  "main": "src/main.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davidongo93/FullStack-Backend-Challenge.git"
+  },
+  "keywords": [
+    "restAPI",
+    "Technical",
+    "Assessment",
+    "Challenge",
+    "Interview",
+    "Backend"
+  ],
+  "author": "David Orlando Miranda Roa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Davidongo93/FullStack-Backend-Challenge/issues"
+  },
+  "homepage": "https://github.com/Davidongo93/FullStack-Backend-Challenge#readme"
+}
