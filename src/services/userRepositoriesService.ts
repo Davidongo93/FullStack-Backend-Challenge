@@ -1,12 +1,13 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
 export interface IRepository {
-  full_name: string;
-  html_url: string;
+  fullName: string;
+  htmlUrl: string;
 }
 
 class UserRepositoriesService {
   private axiosClient: AxiosInstance;
+
   constructor(token: string) {
     this.axiosClient = axios.create({
       baseURL: 'https://api.github.com',
@@ -14,6 +15,13 @@ class UserRepositoriesService {
         Authorization: `Bearer ${token}`,
       },
     });
+  }
+
+  private mapRepository(responseData: any): IRepository {
+    return {
+      fullName: responseData.full_name,
+      htmlUrl: responseData.html_url,
+    };
   }
 
   async getUserRepositories(user: string): Promise<IRepository[]> {
@@ -24,15 +32,10 @@ class UserRepositoriesService {
         },
       });
 
-      const formattedData: IRepository[] = response.data.map(
-        ({ full_name, html_url }: { full_name: string; html_url: string }) => ({
-          full_name,
-          html_url,
-        })
-      );
+      const formattedData: IRepository[] = response.data.map(this.mapRepository);
 
       return formattedData;
-    } catch (error:any) {
+    } catch (error: any) {
       throw new Error(error.message);
     }
   }
