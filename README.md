@@ -53,4 +53,9 @@ Please note that the base URL for the API is set to `http://localhost:3000`. If 
 ## Project Structure
 
 - The main backend code is located in the `src` folder.
-- Additional files related to the technical challenge are stored in the `public` folder.
+- Additional files related to the technical challenge are stored in the `misc` folder.
+
+## Aditional tools
+
+- For a correct view of ER diagram in `misc/04-ER-VideoAPP-Diagram.drawio` please install the VScode Plugin of drawio or visit:
+https://app.diagrams.net/
