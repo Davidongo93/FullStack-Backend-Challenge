@@ -8,7 +8,6 @@ export interface IRepository {
 class UserRepositoriesService {
   private axiosClient: AxiosInstance;
   constructor(token: string) {
-    console.log("Token in service:",token);
     this.axiosClient = axios.create({
       baseURL: 'https://api.github.com',
       headers: {
@@ -19,8 +18,6 @@ class UserRepositoriesService {
 
   async getUserRepositories(user: string): Promise<IRepository[]> {
     try {
-        console.log("User in service:",user);
-        
       const response: AxiosResponse = await this.axiosClient.get(`/users/${user}/repos`, {
         params: {
           per_page: 10,

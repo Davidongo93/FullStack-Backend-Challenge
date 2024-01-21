@@ -1,10 +1,7 @@
-
 import UserRepositoriesService , { IRepository } from "../services/userRepositoriesService";
 
 const token: string | undefined = process.env.GITHUB_ACCESS_TOKEN;
 const userRepositoriesService = new UserRepositoriesService(token || '');
-console.log("token in controller:",token);
-
 
 const getUserRepositories = async (user: string): Promise<IRepository[]> => {
   try {
