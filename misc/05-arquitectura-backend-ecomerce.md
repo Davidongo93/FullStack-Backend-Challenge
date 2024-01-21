@@ -1,0 +1,18 @@
+# Arquitectura de un backend para comercio electrónico:
+## Por: David Orlando Miranda
+
+Una vez que el modelo de negocio está definido en términos de entidades y casos de uso, el backend debe ser capaz de suministrar respuestas a los tipos de solicitudes requeridas por los componentes de la capa de interfaz, ya sea dispositivos, interfaz de usuario (UI), web o incluso la base de datos. Tomando como ejemplo un backend construido en Node.js, mencionaremos las tecnologías que podrían utilizarse (infraestructura) y cómo interactuarían con nuestro núcleo (entidades, casos de uso).
+
+**Tecnologías:**
+
+Dada la naturaleza de nuestro negocio, debemos tener claro que el proceso de cierre de negocio entre el cliente y nuestro comercio es la prioridad. Las tecnologías que entran en juego en esta parte de la aplicación serían las API para pasarelas de pago (Paypal, Stripe, Payu, etc.). Para esta parte, ya deberá estar definido un sistema de validación y autorización (JWT, Passport, Firebase, etc.), encargados de manejar la información más sensible de nuestro negocio y aquella más comprometida en términos de seguridad.
+
+Tenemos que lograr una comunicación constante y efectiva con el cliente. Para ello, vamos a necesitar canales de comunicación directa como el chat, los correos electrónicos, servidores SMS, etc. Existen alternativas como Nodemailer, Socket.io, Mailchimp, con las cuales podemos tener control sobre la comunicación con nuestros clientes.
+
+El aspecto más importante de nuestro comercio será nuestro producto y cómo lo presentamos a la interfaz de usuario. Necesitamos consumir un servicio externo como Cloudinary, capaz de servir videos e imágenes de forma rápida y confiable para ofrecer nuestro producto al cliente. En términos de tecnologías, debemos decidir entre una base de datos relacional o no relacional, de acuerdo a cómo preveamos que nuestro negocio crecerá. Dichas bases de datos serán administradas por ORM’s y controladores.
+
+**Arquitectura de la aplicación:**
+
+Dicho esto, la forma en que la infraestructura de nuestra aplicación (tecnologías, dependencias, controladores, APIs) interactuará con las demás entidades y modelos de negocio será el eje fundamental para el desarrollo. Necesitamos que cada uno de los componentes esté diseñado desde los principios del código limpio y desacoplado, de fácil mantenimiento y testeo, aplicando patrones de diseño idóneos para este fin. Entre estos patrones, es común aplicar la inyección de dependencias, que juega un papel importante ya que nos permitirá la modularidad entre los componentes del núcleo de nuestra aplicación, como los casos de uso y las entidades de nuestro modelo de negocio, con la infraestructura (tecnologías mencionadas anteriormente, dependencias, ORM, etc.). Otro patrón importante que se emplea en este tipo de proyectos es el patrón singleton, que nos permitirá mejorar el rendimiento de nuestras aplicaciones manejando una única instancia, permitiendo la escalabilidad de nuestro proyecto.
+
+Más allá de la organización de los archivos (scaffolding), una nomenclatura establecida para nuestros equipos de trabajo, acompañada de la documentación, entre otras buenas prácticas, la arquitectura de nuestro proyecto deberá estar enfocada en el desacoplamiento del modelo de negocio y las entidades con la infraestructura y las tecnologías a manejar. De esta manera, podemos prever el cambio de cualquier dependencia de nuestro proyecto sin afectar nuestro comercio y, en el sentido inverso, podemos cambiar las reglas de negocio y los casos de uso en algún momento sin afectar la implementación de las tecnologías en nuestro proyecto.
