@@ -1,5 +1,5 @@
 import { Express } from 'express';
-import bodyParser from 'body-parser';
+import * as bodyParser from 'body-parser';
 
 const configureBodyParsers = (server: Express) => {
   server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));

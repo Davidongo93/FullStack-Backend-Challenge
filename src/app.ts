@@ -1,12 +1,12 @@
-import express, { Express } from "express";
-import cors from "cors";
+import * as express from "express";
+import * as cors from "cors";
 import morganMiddleware from "./middleware/morganMiddleware";
 import errorHandlerMiddleware from "./middleware/errorHandlingMiddleware";
 import configureBodyParsers from "./middleware/bodyParsersMiddleware";
 import configureCookieParser from "./middleware/cookieParserMiddleware";
 import routes from "./routes";
 
-const app: Express = express();
+const app: express.Express = express();
 // Logging Middleware
 app.use(morganMiddleware());
 // This is CORS-enabled for all origins!

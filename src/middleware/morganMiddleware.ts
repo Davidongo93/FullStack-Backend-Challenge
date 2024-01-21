@@ -1,4 +1,4 @@
-import morgan from 'morgan';
+import * as morgan from 'morgan';
 
 const morganMiddleware = () => {
   return morgan(
