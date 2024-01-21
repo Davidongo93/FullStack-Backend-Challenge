@@ -10,8 +10,12 @@ const getUserRepositoriesHandler = async (req:Request, res:Response): Promise<vo
       const response = await getUserRepositories(user);
       res.status(200).json(response);
     } catch (error:any) {
-      console.trace(error);
-      res.status(404).json({ error: error.message });
+      console.error(error);
+      if (error.message ==='Request failed with status code 401'){
+        res.status(401).json({ error: error.message });
+      } else {
+      res.status(400).json({ error: error.message });
+      }
     }
   };
   
